@@ -18,13 +18,13 @@ $RECYCLE.BIN/
 *.lnk
 
 # Compiled DLLs
-bin/Debug/
+//bin/Debug/
 
 # Bower Libraries
-wwwroot/lib
+//wwwroot/lib
 
 # NodeJS Libraries
-/node_moduels
+node_moduels/
 
 # =========================
 # Operating System Files
