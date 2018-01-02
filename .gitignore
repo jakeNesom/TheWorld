@@ -21,7 +21,7 @@ $RECYCLE.BIN/
 //bin/Debug/
 
 # Bower Libraries
-//wwwroot/lib
+//wwwroot/lib/
 
 # NodeJS Libraries
 node_moduels/
