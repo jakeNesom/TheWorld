@@ -1,0 +1,14 @@
+
+/* 
+  You can overload environment variables from the web-config file by opening the project Properties >>
+  click 'debug' >> add an environment variable there
+  If you want to override MailSettings.ToAddress :
+    Variable name:  MailSettings__ToAddress  (double underscore replace colon)
+
+
+*/
+{
+  "MailSettings": {
+    "ToAddress": "address@theworld.fakesite"
+  }
+}
