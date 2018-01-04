@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Models;
 
 namespace TheWorld
 {
@@ -50,7 +51,11 @@ namespace TheWorld
                 // implement a real MailService
             }
 
-            
+            services.AddDbContext<WorldContext>();  // registered entity framework as well as our context (fields)
+
+            services.AddScoped<IWorldRepository, WorldRepository>(); // might use a  MockWorldRepository w same interface for testing
+
+            services.AddTransient<WorldContextSeedData>(); // created every time we need it
 
             services.AddMvc(); // registers the MVC services so we can later 
     
@@ -58,7 +63,8 @@ namespace TheWorld
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
+            WorldContextSeedData seeder)
         {
             if (env.IsDevelopment())
             {
@@ -96,6 +102,9 @@ namespace TheWorld
                     defaults: new { controller = "App", action = "Index" }
                 );
             });
+
+
+            seeder.EnsureSeedData().Wait();
 
         }
     }

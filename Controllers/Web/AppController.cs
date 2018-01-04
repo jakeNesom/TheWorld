@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using TheWorld.ViewModels;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Models;
 
 namespace TheWorld.Controllers.Web
 {
@@ -14,20 +15,24 @@ namespace TheWorld.Controllers.Web
     {
         private IMailService _mailService;
         private IConfigurationRoot _config;
+        private IWorldRepository _repository;
 
-        public AppController (IMailService mailService, IConfigurationRoot config )
+        public AppController (IMailService mailService, IConfigurationRoot config, IWorldRepository repository )
         {
             // we're injecting a new object that implements IMailService
             _mailService = mailService;
             _config = config;
+            _repository = repository;
         }
 
         //These methods return the views 
         public IActionResult Index () 
         {
-            // this looks to return a view
-            // by default mvc looks in the ./views/app folder for the 'razor' page
-            return View();
+
+            var data = _repository.GetAllTrips();
+
+            // returns view - takes arguments - in this case data we get from SQL we can manipulate in view
+            return View(data);
         }
 
         public IActionResult Contact () 

@@ -10,5 +10,8 @@
 {
   "MailSettings": {
     "ToAddress": "address@theworld.fakesite"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }
 }
