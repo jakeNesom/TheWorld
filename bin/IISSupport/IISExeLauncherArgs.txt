@@ -1,0 +1,8 @@
+-p C:\Program Files\dotnet\dotnet.exe
+-pidFile C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\IISSupport\pidfile.txt
+-wd C:\Users\jnesom\Source\Repos\TheWorld\TheWorld
+-a exec "C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\TheWorld.dll"
+-pipe f57cdbd3-b3f7-4c11-8572-02499802013f
+-pr TheWorld
+-owningPid 11260
+-env ASPNETCORE_CONTENTROOT=C:\Users\jnesom\Source\Repos\TheWorld\TheWorld|ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.ApplicationInsights.HostingStartup|MailSettings__ToAddress=someEmail@theWorld.fakesite|ASPNETCORE_ENVIRONMENT=Development|COMPLUS_ForceENC=1|

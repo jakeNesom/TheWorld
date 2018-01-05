@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
 using TheWorld.Models;
+using Microsoft.Extensions.Logging;
 
 namespace TheWorld
 {
@@ -57,21 +58,31 @@ namespace TheWorld
 
             services.AddTransient<WorldContextSeedData>(); // created every time we need it
 
+            services.AddLogging();
+
             services.AddMvc(); // registers the MVC services so we can later 
     
              // call them
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
-            WorldContextSeedData seeder)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env,
+            WorldContextSeedData seeder,
+            ILoggerFactory factory
+            )
         {
-            if (env.IsDevelopment())
+            if (env.IsEnvironment("Development"))
             {
-                app.UseDeveloperExceptionPage(); 
+                app.UseDeveloperExceptionPage();
                 /* This method shows verbose details you're throwing on the
                  * viewpage in the web browser
                 */
+                factory.AddDebug(LogLevel.Information);
+            }
+            else
+            {
+                factory.AddDebug(LogLevel.Error);
             }
 
 

@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/TheWorld",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:64293/",
       "sslPort": 0
@@ -9,8 +13,7 @@
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
+      "commandName": "IIS",
       "environmentVariables": {
         "MailSettings__ToAddress": "someEmail@theWorld.fakesite",
         "ASPNETCORE_ENVIRONMENT": "Development"

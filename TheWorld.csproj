@@ -29,7 +29,6 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1"></DotNetCliToolReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Controllers\Web\" />
     <Folder Include="Views\" />
     <Folder Include="Views\App\" />
