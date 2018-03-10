@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace TheWorld.Models
 {
-    public class WorldContext : DbContext
-    {
+    public class WorldContext : IdentityDbContext<WorldUser>
+    {//root class becomes IdentityDbContext when we add Identity to the DB,
+        // before root class was DbContext
+
         private IConfigurationRoot _config;
 
         // this class is for interfacing with the database
@@ -27,7 +30,7 @@ namespace TheWorld.Models
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(_config["ConnectionStrings:WorldContextConnection"]);  // were going to pass in the config data we inejcted into the root startup.cs
+            optionsBuilder.UseSqlServer(_config["ConnectionStrings:WorldContextConnectionSQLMGTStudio"]);  // were going to pass in the config data we inejcted into the root startup.cs
         }
     }
 }

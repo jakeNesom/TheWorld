@@ -19,6 +19,7 @@ C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\obj\Debug\netcoreapp2.0\TheWorld.
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\obj\Debug\netcoreapp2.0\TheWorld.dll
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\obj\Debug\netcoreapp2.0\TheWorld.pdb
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\obj\Debug\netcoreapp2.0\TheWorld.csprojResolveAssemblyReference.cache
+C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\AutoMapper.dll
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\Microsoft.ApplicationInsights.dll
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\Microsoft.ApplicationInsights.AspNetCore.dll
 C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\Microsoft.AI.DependencyCollector.dll

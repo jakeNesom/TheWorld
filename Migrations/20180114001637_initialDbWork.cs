@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace TheWorld.Migrations
 {
-    public partial class InitialDatabase : Migration
+    public partial class initialDbWork : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,7 @@ namespace TheWorld.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Arrival = table.Column<DateTime>(nullable: false),
-                    Latitutde = table.Column<double>(nullable: false),
+                    Latitude = table.Column<double>(nullable: false),
                     Longitude = table.Column<double>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Order = table.Column<int>(nullable: false),

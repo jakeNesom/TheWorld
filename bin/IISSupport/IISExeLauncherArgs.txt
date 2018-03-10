@@ -2,7 +2,7 @@
 -pidFile C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\IISSupport\pidfile.txt
 -wd C:\Users\jnesom\Source\Repos\TheWorld\TheWorld
 -a exec "C:\Users\jnesom\Source\Repos\TheWorld\TheWorld\bin\Debug\netcoreapp2.0\TheWorld.dll"
--pipe f57cdbd3-b3f7-4c11-8572-02499802013f
+-pipe df724169-1602-4ce0-af1d-9a6e1b8d9081
 -pr TheWorld
--owningPid 11260
+-owningPid 29904
 -env ASPNETCORE_CONTENTROOT=C:\Users\jnesom\Source\Repos\TheWorld\TheWorld|ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.ApplicationInsights.HostingStartup|MailSettings__ToAddress=someEmail@theWorld.fakesite|ASPNETCORE_ENVIRONMENT=Development|COMPLUS_ForceENC=1|

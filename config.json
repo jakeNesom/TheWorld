@@ -12,6 +12,11 @@
     "ToAddress": "address@theworld.fakesite"
   },
   "ConnectionStrings": {
-    "WorldContextConnection": "Server=localdb;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+    "WorldContextConnection": "Server=localdb;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;",
+    "WorldContextConnectionSQLMGTStudio": "Server=ISD01JNESOM99\\MAIN;Database=TheWorldDb;User Id=TheWorld_user;Password=1qazXSW@3edc;MultipleActiveResultSets=true;"
+
+  },
+  "Keys": {
+    "BingKey": "Arton7wTsNwCVZUKp_wy_ycQYvkE3s7D8mEhHXUMi1x6qFVZvFUfWJauMlOzKTwW"
   }
 }
