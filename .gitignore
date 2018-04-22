@@ -27,6 +27,9 @@ $RECYCLE.BIN/
 node_moduels/
 */node_modules/
 /node_modules
+
+#Client App Build Output
+/wwwroot/ClientApp/dist
 # =========================
 # Operating System Files
 # =========================
