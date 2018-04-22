@@ -19,3 +19,9 @@
 - replace connection string name in WorldContext.cs
 - uncomment your seedData method and run your app
 
+
+##Angular setup
+- moved project from {{angularProjName}}/src/ to {{projectRoot}}/ClientApp
+- moved some filese in {{angularProjName}} directory into {{projectRoot}}
+-- tsconfig.json, angular-cli.json, and package.json
+--- Reconfigured the three files to point to new client app locations

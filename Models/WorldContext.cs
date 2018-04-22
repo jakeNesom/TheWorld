@@ -29,8 +29,16 @@ namespace TheWorld.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            var osInfo = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
 
-            optionsBuilder.UseSqlServer(_config["ConnectionStrings:WorldContextConnectionSQLMGTStudio"]);  // were going to pass in the config data we inejcted into the root startup.cs
+            if(osInfo.Contains("Windows")) {
+                
+               optionsBuilder.UseSqlServer(_config["ConnectionStrings:WorldContextConnectionSQLMGTStudio"]);  // were going to pass in the config data we inejcted into the root startup.cs
+         
+            } else {
+                optionsBuilder.UseSqlServer(_config["ConnectionStrings:WorldContextConnectionMacOS"]); 
+            }
+            
         }
     }
 }

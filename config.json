@@ -1,27 +1,15 @@
 
-/* 
-  You can overload environment variables from the web-config file by opening the project Properties >>
-  click 'debug' >> add an environment variable there
-  If you want to override MailSettings.ToAddress :
-    Variable name:  MailSettings__ToAddress  (double underscore replace colon)
-
-
-*/
 {
   "MailSettings": {
     "ToAddress": "address@theworld.fakesite"
   },
   "ConnectionStrings": {
-<<<<<<< Updated upstream
+    "WorldContextConnectionMacOS": "Server=127.0.0.1;Database=TheWorldDb;User Id=sa; Password=1qazXSW@3edc;MultipleActiveResultSets=true;",
     "WorldContextConnection": "Server=localdb;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;",
     "WorldContextConnectionSQLMGTStudio": "Server=ISD01JNESOM99\\MAIN;Database=TheWorldDb;User Id=TheWorld_user;Password=1qazXSW@3edc;MultipleActiveResultSets=true;"
 
   },
   "Keys": {
     "BingKey": "Arton7wTsNwCVZUKp_wy_ycQYvkE3s7D8mEhHXUMi1x6qFVZvFUfWJauMlOzKTwW"
-=======
-    "WorldContextConnection": "Server=127.0.0.1;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;",
-    "MacConnectionString": "Server=127.0.0.1;Database=TheWorldDb;Integrated Security=False;User Id=TheWorldDb_user;Password=1qazXSW@3edc;MultipleActiveResultSets=True"
->>>>>>> Stashed changes
   }
 }

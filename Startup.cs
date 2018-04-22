@@ -15,6 +15,7 @@ using AutoMapper;
 using TheWorld.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace TheWorld
 {
@@ -45,7 +46,8 @@ namespace TheWorld
                 if (_env.IsProduction())  // you have to use the aspnetcore_environtment to set the environment for this to work
                 {
 
-
+                    // this attempts to use https and redirects
+                    // user to https - best only on production
                     options.Filters.Add(new RequireHttpsAttribute()); // will try and use https (encryption)
                 }
             })
@@ -83,6 +85,24 @@ namespace TheWorld
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Auth/Login";
+                options.Events = new CookieAuthenticationEvents() {
+                    /* when we convert to api, we want to 
+                    send users a status code instead of 
+                    redirecting the view 
+                     */
+                    OnRedirectToLogin = async ( ctx )=> 
+                    {
+                        if(ctx.Request.Path.StartsWithSegments("/api") &&
+                            ctx.Response.StatusCode == 200) 
+                        {
+                            ctx.Response.StatusCode = 401;
+                        } else {
+                            ctx.Response.Redirect(ctx.RedirectUri);
+                        }
+                        // this is saying let task complete
+                        await Task.Yield();
+                    }
+                };
             });
 
 
@@ -162,6 +182,10 @@ namespace TheWorld
             });
 
 
+            /* 
+            If you have to rebuild entity comment out the 
+            seeder here or you'll get errors.
+             */
             seeder.EnsureSeedData().Wait();
 
         }

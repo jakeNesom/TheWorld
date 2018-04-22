@@ -48,17 +48,32 @@ namespace TheWorld.Controllers
                     }
                     else
                     {
+                        /* if we use authorization on other controllers
+                        redirecting witht the returnURL will keep users
+                        in the same spot they were accessing */
                         return Redirect(returnUrl);
                     }
                 }
                 else
                 {
+                    // we want the error to be at the entire model state so 
+                    // we leave the model blank
                     ModelState.AddModelError("", "Username or password is incorrect");
                 }
             }
 
             return View();
 
+        }
+
+        public async Task<IActionResult> Logout () 
+        {
+            if(User.Identity.IsAuthenticated) 
+            {
+                await _signInManager.SignOutAsync();
+            }
+
+            return RedirectToAction("Index", "App");
         }
     }
 }

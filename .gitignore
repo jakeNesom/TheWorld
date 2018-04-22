@@ -25,7 +25,8 @@ $RECYCLE.BIN/
 
 # NodeJS Libraries
 node_moduels/
-
+*/node_modules/
+/node_modules
 # =========================
 # Operating System Files
 # =========================
